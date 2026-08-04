@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>제주동부교회</title>
+<meta name="description" content="제주동부교회 홈페이지 — 예배 안내, 교회 소식, 오시는 길">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="config-banner" id="configBanner">
+  아직 Firebase 연결 전이라 <code>예시 데이터</code>로만 표시됩니다. <code>js/firebase-config.js</code>를 채우면 실제 메뉴·게시글·로그인이 동작합니다. 자세한 절차는 README.md 참고.
+</div>
+
+<div class="admin-bar" id="adminBar">
+  <span class="dot"></span> 관리자 모드
+  <button type="button" id="heroPhotoBtn">대표사진 변경</button>
+  <button type="button" id="menuEditBtn">메뉴 편집</button>
+  <button type="button" id="writeBtn">글쓰기</button>
+  <button type="button" id="logoutBtn">로그아웃</button>
+</div>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#home">
+      <span class="brand-mark">동</span>
+      <span>제주동부교회<span class="brand-sub">JEJU DONGBU CHURCH</span></span>
+    </a>
+
+    <nav class="primary" id="primaryNav" aria-label="주요 메뉴"></nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="테마 전환">
+        <svg id="themeIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></svg>
+      </button>
+      <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="메뉴 열기">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-panel" id="mobilePanel"></div>
+</header>
+
+<main id="home">
+  <!-- HERO -->
+  <section class="hero" id="heroSection">
+    <div class="hero-sky"></div>
+    <div class="hero-sun"></div>
+    <div class="hero-photo" id="heroPhoto"></div>
+    <div class="hero-photo-hint">관리자 로그인 후 상단 “대표사진 변경”으로 교회 전경사진을 등록해보세요</div>
+    <div class="wrap">
+      <div class="hero-eyebrow">한국기독교장로회 · JEJU DONGBU CHURCH</div>
+      <h1>세상의 빛과<br>소금이 되는 교회</h1>
+      <p class="lede">하나님의 사랑과 가정의 사랑으로 하나됩니다. 1908년부터 이어온 믿음이 오늘도 제주 동쪽에서 자라납니다.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-solid" href="#worship">예배 시간 보기</a>
+        <a class="btn btn-ghost" href="#location">오시는 길</a>
+      </div>
+      <div class="hero-verse">
+        “너희는 세상의 빛이라”
+        <b>마태복음 5:14</b>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">ABOUT US</div>
+        <h2>1908년부터,<br>제주 동쪽을 지켜온 공동체</h2>
+        <p>한국기독교장로회 제주동부교회를 소개합니다. 아래 소개 글은 초안이니 담임목사님과 상의해 다듬어주세요.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-copy reveal">
+          <p>제주동부교회는 1908년에 세워져 100년이 넘는 시간 동안 제주시 고마로 지역에서 예배와 교제, 섬김의 자리를 이어오고 있습니다. “세상의 빛과 소금이 되는 교회”라는 표어 아래, 하나님의 사랑과 가정의 사랑으로 하나 되는 공동체를 이루어가고 있습니다.</p>
+          <p>담임목사: 장진환 목사 · 부목사: 임예솔 목사, 이재근 목사<span class="placeholder"> — 이 문단에는 교회의 비전과 사역 방향을 조금 더 자세히 소개하는 글을 추가해주세요.</span></p>
+        </div>
+
+        <div class="value-list reveal">
+          <div class="value-item"><span class="num">01</span><div><h4>예배</h4><p>말씀과 찬양이 살아있는 예배로 한 주를 시작합니다.</p></div></div>
+          <div class="value-item"><span class="num">02</span><div><h4>교제</h4><p>세대를 잇는 소그룹과 나눔으로 서로를 돌봅니다.</p></div></div>
+          <div class="value-item"><span class="num">03</span><div><h4>섬김</h4><p>지역사회와 이웃을 향한 나눔을 실천합니다.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORSHIP TIMES -->
+  <section id="worship" class="alt">
+    <div class="wrap">
+      <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+        <div class="eyebrow" style="justify-content:center;">WORSHIP</div>
+        <h2>예배 안내</h2>
+        <p>제주동부교회 홈페이지에 안내된 예배 시간입니다. 시간이 바뀌면 관리자 로그인 후 이 섹션의 문구를 직접 수정해주세요.</p>
+      </div>
+
+      <div class="worship-grid">
+        <div class="worship-card reveal">
+          <div class="day">SUNDAY · 1부</div>
+          <h3>주일 낮 예배</h3>
+          <div class="time tabular">09:00</div>
+          <p>본당</p>
+        </div>
+        <div class="worship-card reveal">
+          <div class="day">SUNDAY · 2부</div>
+          <h3>주일 낮 예배</h3>
+          <div class="time tabular">11:00</div>
+          <p>본당</p>
+        </div>
+        <div class="worship-card reveal">
+          <div class="day">SUNDAY</div>
+          <h3>주일 오후 예배</h3>
+          <div class="time tabular">13:30</div>
+          <p>본당</p>
+        </div>
+        <div class="worship-card reveal">
+          <div class="day">WEDNESDAY</div>
+          <h3>수요예배</h3>
+          <div class="time tabular">19:30</div>
+          <p>본당</p>
+        </div>
+        <div class="worship-card reveal">
+          <div class="day">DAILY</div>
+          <h3>새벽기도회</h3>
+          <div class="time tabular">05:00</div>
+          <p>본당</p>
+        </div>
+        <div class="worship-card reveal">
+          <div class="day">WEEKLY</div>
+          <h3>구역예배</h3>
+          <div class="time tabular">구역별</div>
+          <p>구역 가정 · 정한 시간</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOARD -->
+  <section id="board">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">NEWS</div>
+        <h2>교회 소식</h2>
+        <p>관리자로 로그인하면 이 자리에서 바로 글을 쓰고, 사진을 올릴 수 있습니다.</p>
+      </div>
+      <div id="postGrid" class="post-grid"></div>
+      <div id="postEmpty" class="empty-state" style="display:none;">등록된 소식이 아직 없습니다.</div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location" class="alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div class="eyebrow">LOCATION</div>
+        <h2>오시는 길</h2>
+        <p>제주동부교회 공식 연락처입니다.</p>
+      </div>
+
+      <div class="location-grid reveal">
+        <div class="info-card">
+          <div class="info-row"><b>주소</b><span>제주특별자치도 제주시 고마로7길 11</span></div>
+          <div class="info-row"><b>대표전화</b><span class="tabular">064-722-0067</span></div>
+          <div class="info-row"><b>팩스</b><span class="tabular">064-758-0068</span></div>
+          <div class="info-row"><b>주차</b><span>본당 옆 주차장 이용 가능</span></div>
+        </div>
+        <div class="map-card">
+          <div class="map-label">JEJU DONGBU CHURCH<span>실제 지도가 필요하면 이 영역을 카카오맵/구글맵 iframe으로 교체해주세요</span></div>
+        </div>
+      </div>
+
+      <div class="cta-band reveal" style="margin-top:20px;">
+        <div>
+          <h3>처음 방문이신가요? 언제든 환영합니다.</h3>
+          <p>예배 시간에 맞춰 오시면 안내팀이 반갑게 맞이해 드립니다.</p>
+        </div>
+        <a class="btn btn-solid" href="tel:064-722-0067">전화 문의</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-row">
+      <div class="brand">
+        <span class="brand-mark">동</span>
+        <span>제주동부교회<span class="brand-sub">JEJU DONGBU CHURCH</span></span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">교회소개</a>
+        <a href="#worship">예배안내</a>
+        <a href="#board">소식</a>
+        <a href="#location">오시는길</a>
+        <button type="button" id="adminEntry">관리자 로그인</button>
+      </div>
+    </div>
+    <p class="footer-note">주소·전화·예배 시간은 제주동부교회 공식 홈페이지 정보를 참고해 채웠고, 소개 문구 일부는 초안이니 운영 전 담임목사님과 확인해주세요.<br>제주특별자치도 제주시 고마로7길 11 | TEL 064-722-0067 | FAX 064-758-0068<br>© 2026 Jeju Dongbu Church.</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="맨 위로">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+<!-- 로그인 모달 -->
+<div class="modal-overlay" id="loginOverlay">
+  <div class="modal">
+    <h3>관리자 로그인</h3>
+    <p class="modal-sub">Firebase Authentication에 등록된 관리자 이메일/비밀번호로 로그인합니다.</p>
+    <form id="loginForm">
+      <div class="field"><label>이메일</label><input type="email" id="loginEmail" required></div>
+      <div class="field"><label>비밀번호</label><input type="password" id="loginPassword" required></div>
+      <div class="form-error" id="loginError"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-plain" id="loginClose">닫기</button>
+        <button type="submit" class="btn btn-solid">로그인</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 메뉴 편집 모달 -->
+<div class="modal-overlay" id="menuOverlay">
+  <div class="modal">
+    <h3>메뉴 편집</h3>
+    <p class="modal-sub">메뉴 이름과 이동할 섹션 id(#worship 형태)를 수정하세요. 순서도 바꿀 수 있습니다.</p>
+    <form id="menuForm">
+      <div id="tabRows"></div>
+      <button type="button" class="add-tab-btn" id="addTabBtn">+ 메뉴 추가</button>
+      <div class="form-error" id="menuError"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-plain" id="menuClose">닫기</button>
+        <button type="submit" class="btn btn-solid">저장</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 대표사진(히어로) 변경 모달 -->
+<div class="modal-overlay" id="heroPhotoOverlay">
+  <div class="modal">
+    <h3>대표사진 변경</h3>
+    <p class="modal-sub">첫 화면 배경으로 쓸 교회 전경사진을 올려주세요. 가로로 넓은 사진이 잘 어울립니다.</p>
+    <form id="heroPhotoForm">
+      <div class="field">
+        <label>사진</label>
+        <input type="file" id="heroPhotoInput" accept="image/*" required>
+        <div class="field-hint">업로드한 사진은 자동으로 압축되어 저장됩니다.</div>
+      </div>
+      <div class="form-error" id="heroPhotoError"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-plain" id="heroPhotoRemove">사진 제거</button>
+        <button type="button" class="btn-plain" id="heroPhotoClose">닫기</button>
+        <button type="submit" class="btn btn-solid">저장</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 게시글 작성/수정 모달 -->
+<div class="modal-overlay" id="postOverlay">
+  <div class="modal">
+    <h3 id="postModalTitle">새 소식 작성</h3>
+    <form id="postForm">
+      <div class="field"><label>제목</label><input type="text" id="postTitle" required></div>
+      <div class="field"><label>내용</label><textarea id="postContent" rows="6" required></textarea></div>
+      <div class="field">
+        <label>사진 (선택)</label>
+        <input type="file" id="postImage" accept="image/*">
+        <div class="field-hint">업로드한 사진은 자동으로 압축되어 저장됩니다.</div>
+      </div>
+      <div class="form-error" id="postError"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn-plain" id="postClose">닫기</button>
+        <button type="submit" class="btn btn-solid">저장</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 게시글 상세 모달 -->
+<div class="modal-overlay" id="detailOverlay">
+  <div class="modal">
+    <h3 id="detailTitle"></h3>
+    <div class="detail-meta tabular" id="detailMeta"></div>
+    <img class="detail-image" id="detailImage" alt="">
+    <div class="detail-content" id="detailContent"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn-plain" id="detailClose">닫기</button>
+    </div>
+  </div>
+</div>
+
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
